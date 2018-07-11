@@ -5,7 +5,8 @@
   "scripts": {
     "cypress": "cypress open",
     "serve": "http-server . -p 1234",
-    "test": "cypress run",
+    "cypress:headless": "cypress run",
+    "cypress:headed": "cypress run --headed",
     "postinstall": "echo $(pwd)"
   },
   "keywords": [],
