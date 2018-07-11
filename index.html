@@ -1,0 +1,48 @@
+<html>
+<head >
+    <title>Cypress demo</title>
+    <meta name="viewport" content="initial-scale=1.0">
+    <meta charset="utf-8">
+    <style>
+        #map {
+            width: 30vw;
+            height: 30vh;
+        }
+        html, body {
+            height: 100%;
+            width: 80%;
+            margin: auto;
+            padding: 0;
+        }
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Cypress find demo</h1>
+    <div id="map"></div>
+</div>
+<script>
+	window.initMap = function initMap (){
+		const p = {lat: -34.397, lng: 150.644};
+		const map = new google.maps.Map(document.getElementById('map'), {
+			center: p,
+			zoom: 8
+		});
+		new google.maps.Marker({
+			position: p,
+			map: map,
+			title: 'Hello World!'
+		});
+		console.log(`Init map`);
+    }
+</script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA7P2NYjIpBGwS1HXNjmvOrYvsu7BXhIlM&callback=initMap"></script>
+</body>
+</html>
